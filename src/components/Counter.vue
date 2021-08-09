@@ -12,7 +12,8 @@
     <!--    <button :class="getClassName()" v-on:click="inc">inc</button>-->
     <!--    <button :class="['bold',getClassName()]" v-on:click="inc">inc</button>-->
     <!--        <button :class="{bold: true, isInced: counter > 0, isDeced: counter <= 0}" v-on:click="inc">inc</button>-->
-    <button :class="['bold',{isInced: counter > 0, isDeced: counter <= 0}]" @click="inc">inc</button>
+<!--    <button :class="['bold',{isInced: counter > 0, isDeced: counter <= 0}]" @click="inc">inc</button>-->
+    <button :class="['bold']" @click="inc">inc</button>
     <button v-on:click="$emit('handleDecClick')">dec</button>
 
   </div>
@@ -24,6 +25,7 @@ export default {
     // counter: Number
     counter: {
       type: Number,
+      // type: String,
       required: true
     }
   },
@@ -31,10 +33,9 @@ export default {
     inc() {
       this.$emit('handleIncClick', 1, 2, 3)
     },
-    1:06:02
-    getClassName() {
-      return this.counter > 0 ? 'isInced' : 'isDeced';
-    }
+    // getClassName() {
+    //   return this.counter > 0 ? 'isInced' : 'isDeced';
+    // }
   }
 }
 </script>
